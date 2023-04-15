@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/LES_ReactSelf/static/css/main.80e02cf8.css",
-    "main.js": "/LES_ReactSelf/static/js/main.c276b5fb.js",
+    "main.css": "/LES_ReactSelf/static/css/main.0a687c08.css",
+    "main.js": "/LES_ReactSelf/static/js/main.4ae556d0.js",
     "static/js/787.28cb0dcd.chunk.js": "/LES_ReactSelf/static/js/787.28cb0dcd.chunk.js",
     "static/media/Img_bg1.jpg": "/LES_ReactSelf/static/media/Img_bg1.c997180c791c8e8bb7b9.jpg",
     "static/media/Img_bg2.jpg": "/LES_ReactSelf/static/media/Img_bg2.7203d7b0326cc736430e.jpg",
     "static/media/Img_bg3.jpg": "/LES_ReactSelf/static/media/Img_bg3.b6524bf8ae147efd554c.jpg",
     "index.html": "/LES_ReactSelf/index.html",
-    "main.80e02cf8.css.map": "/LES_ReactSelf/static/css/main.80e02cf8.css.map",
-    "main.c276b5fb.js.map": "/LES_ReactSelf/static/js/main.c276b5fb.js.map",
+    "main.0a687c08.css.map": "/LES_ReactSelf/static/css/main.0a687c08.css.map",
+    "main.4ae556d0.js.map": "/LES_ReactSelf/static/js/main.4ae556d0.js.map",
     "787.28cb0dcd.chunk.js.map": "/LES_ReactSelf/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.80e02cf8.css",
-    "static/js/main.c276b5fb.js"
+    "static/css/main.0a687c08.css",
+    "static/js/main.4ae556d0.js"
   ]
 }
