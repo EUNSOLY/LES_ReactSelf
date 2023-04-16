@@ -1,9 +1,11 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 function ListCard(props) {
   return (
     <li className="list">
       <div className="imgCon">
-        <p className="discount">{props.item.discount}%</p>
+        {props.item.discount > 0 ? (
+          <p className="discount">{props.item.discount}%</p>
+        ) : null}
         <img
           src={`${process.env.PUBLIC_URL}/img/${props.item.img}`}
           alt={props.item.title}

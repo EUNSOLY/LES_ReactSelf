@@ -300,16 +300,104 @@ button {
   background-color: goldenrod;
 }
 .Detail .listCon {
-  border: 1px solid red;
   align-items: center;
   width: 100%;
 }
 
 .Detail .slide .list {
   width: 100%;
-  border: 2px solid darkgoldenrod;
   margin-right: 0;
-  margin-bottom: 0m;
+  margin-bottom: 0;
+}
+.DetailSlide h1 {
+  padding: 2rem 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.tapCon {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 1rem;
+  padding-top: 2rem;
+}
+.tapCon li {
+  cursor: pointer;
+  padding: 1rem 0;
+  width: 10%;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.tapCon li::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  left: 0;
+  bottom: -10px;
+  background-color: goldenrod;
+}
+.tapCon li:hover {
+  color: goldenrod;
+}
+.tapCon li:hover::before {
+  bottom: 0;
+}
+.detailIcon {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.detailIcon .Heart {
+  position: relative;
+  display: flex;
+}
+.detailIcon .icon {
+  width: 30px;
+  display: flex;
+  margin-right: 0.25rem;
+}
+.detailIcon .Heart::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 1px;
+  height: 80%;
+  transform: translate(0, -50%);
+  background-color: #ddd;
+}
+.detailIcon .icon:hover svg path {
+  fill: #e91e63;
+}
+.detailIcon .icon svg {
+  width: 100%;
+  cursor: pointer;
+}
+.detailIcon .Heart > p {
+  color: #e91e63;
+}
+.detailIcon .snsWrap {
+  display: flex;
+}
+.detailIcon .snsWrap a {
+  padding: 0 0.5rem;
+}
+/* 하트 */
+.icon path {
+  fill: transparent;
+  stroke-width: 10;
+  stroke: #e91e63;
+}
+.DetailText p.dataId {
+  font-size: 0.75rem;
+  color: #ddd;
+  padding: 0.5rem 0 0;
+}
+.DetailText p.dataCate {
+  font-size: 0.75rem;
+  color: #ddd;
 }
 /* footer */
 .footer {
@@ -323,6 +411,7 @@ button {
 }
 .footer .top nav {
   width: 70%;
+  color: ;
   display: flex;
 }
 .footer .top nav a {

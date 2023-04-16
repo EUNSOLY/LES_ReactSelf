@@ -1,14 +1,9 @@
-import { useParams } from "react-router-dom";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper";
-import "swiper/css";
-import "swiper/css/navigation";
-
-import ListCard from "./ListCard";
+import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
+import DetailSlide from "./DetailSlide";
+import TapMenu from "./TapMenu";
 function Detail(props) {
   console.log("디테일", props.data);
-
   let { id } = useParams();
   console.log("파람스", id);
   let data = props.data[id - 1];
@@ -16,6 +11,7 @@ function Detail(props) {
   let dataList = props.data.filter((a) => a.category === data.category);
   console.log("dataList", dataList);
   let [count, setCount] = useState(1);
+  let [Hcount, setHcount] = useState(0);
   return (
     <section className="Detail mw">
       <div className="DetailCon">
@@ -30,35 +26,70 @@ function Detail(props) {
           <p>{data.price}원</p>
           <div className="cartWrap">
             <div className="countBtn">
-              <span className="plus">-</span>
+              <span
+                className="minus"
+                onClick={() => {
+                  {
+                    count <= 0 ? setCount(0) : setCount(count - 1);
+                  }
+                }}
+              >
+                -
+              </span>
               <span>{count}</span>
-              <span className="minus">+</span>
+              <span
+                className="plus"
+                onClick={() => {
+                  setCount(count + 1);
+                }}
+              >
+                +
+              </span>
             </div>
             <div className="cartBtn">
               <span>ADD TO CART</span>
             </div>
           </div>
+          <div className="detailIcon">
+            <div className="Heart">
+              <div className="icon heart">
+                <svg
+                  onClick={() => {
+                    setHcount(Hcount + 1);
+                  }}
+                  viewBox="-5 -28 521.00002 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="m471.382812 44.578125c-26.503906-28.746094-62.871093-44.578125-102.410156-44.578125-29.554687 0-56.621094 9.34375-80.449218 27.769531-12.023438 9.300781-22.917969 20.679688-32.523438 33.960938-9.601562-13.277344-20.5-24.660157-32.527344-33.960938-23.824218-18.425781-50.890625-27.769531-80.445312-27.769531-39.539063 0-75.910156 15.832031-102.414063 44.578125-26.1875 28.410156-40.613281 67.222656-40.613281 109.292969 0 43.300781 16.136719 82.9375 50.78125 124.742187 30.992188 37.394531 75.535156 75.355469 127.117188 119.3125 17.613281 15.011719 37.578124 32.027344 58.308593 50.152344 5.476563 4.796875 12.503907 7.4375 19.792969 7.4375 7.285156 0 14.316406-2.640625 19.785156-7.429687 20.730469-18.128907 40.707032-35.152344 58.328125-50.171876 51.574219-43.949218 96.117188-81.90625 127.109375-119.304687 34.644532-41.800781 50.777344-81.4375 50.777344-124.742187 0-42.066407-14.425781-80.878907-40.617188-109.289063zm0 0" />
+                </svg>
+              </div>
+              <p>{Hcount}</p>
+            </div>
+            <div className="snsWrap">
+              <Link to="/sns">
+                <i className="fa-regular fa-envelope"></i>
+              </Link>
+              <Link to="/sns">
+                <i className="fa-brands fa-instagram"></i>
+              </Link>
+              <Link to="/sns">
+                <i className="fa-brands fa-facebook"></i>
+              </Link>
+              <Link to="/sns">
+                <i className="fa-brands fa-twitter"></i>
+              </Link>
+            </div>
+          </div>
+          <p className="dataId">
+            Number : <span>{data._id}</span>
+          </p>
+          <p className="dataCate">
+            Categories : <span>{data.category}</span>
+          </p>
         </div>
       </div>
-
-      <Swiper
-        slidesPerView={3}
-        spaceBetween={30}
-        navigation={true}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Navigation]}
-        className="listCon"
-      >
-        {dataList.map((item, i) => {
-          return (
-            <SwiperSlide className="slide">
-              <ListCard item={item} />
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
+      <TapMenu />
+      <DetailSlide dataList={dataList} />
     </section>
   );
 }
